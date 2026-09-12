@@ -30,6 +30,205 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/virtual.css">
 
   <link rel="stylesheet" type="text/css" href="./assets/css/topbar.virtual.css">
+
+  <style>
+    /* ---- Compaction & polish pass ----
+       Only spacing, sizing, rhythm and subtle depth are touched here.
+       No color values are introduced or overridden — the existing
+       theme classes (theme-red / fg-theme / bg-theme, etc.) still
+       control every color on the page. */
+
+    /* Tighten the overall vertical rhythm between page sections */
+    .vg-page {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+
+    .vg-page .container,
+    .vg-page .container-fluid {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    /* About section */
+    #about h1.fw-light {
+      margin-bottom: 4px;
+    }
+
+    #about .text-muted {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    #about .theme-list {
+      margin-bottom: 20px;
+    }
+
+    #about .theme-list li {
+      padding: 4px 0;
+    }
+
+    .img-place {
+      margin-bottom: 16px;
+    }
+
+    /* Achievements list: a long list reads much better with tighter,
+       consistent spacing and a hairline separator instead of empty gaps */
+    #about .mt-4 h5.fw-bold {
+      margin-bottom: 12px;
+    }
+
+    #about .mt-4 > ul.text-muted {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    #about .mt-4 > ul.text-muted > li {
+      padding: 8px 0;
+      line-height: 1.5;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    #about .mt-4 > ul.text-muted > li:first-child {
+      padding-top: 0;
+    }
+
+    #about .mt-4 > ul.text-muted > li ul {
+      margin-top: 8px;
+      margin-bottom: 4px;
+      padding-left: 18px;
+    }
+
+    #about .mt-4 > ul.text-muted > li ul li {
+      padding: 3px 0;
+      border-bottom: none;
+    }
+
+    /* Skills section */
+    .progress-wrapper {
+      margin-bottom: 14px;
+    }
+
+    .progress-wrapper .caption {
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    /* Education / Experience timeline */
+    .timeline {
+      margin-top: 16px !important;
+    }
+
+    .timeline li {
+      margin-bottom: 22px;
+      padding-bottom: 2px;
+    }
+
+    .timeline li:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline .details p {
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    /* Service cards get a touch of depth so the grid feels less flat,
+       using neutral, color-agnostic shadow values */
+    .card-service {
+      padding: 28px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card-service:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+    }
+
+    .card-service .icon {
+      margin-bottom: 14px;
+    }
+
+    .card-service .caption p {
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* Fun-fact counters */
+    .section-counter .number {
+      margin-bottom: 2px;
+    }
+
+    /* Portfolio grid */
+    .gridder {
+      margin-top: 8px !important;
+      margin-bottom: 8px !important;
+    }
+
+    .grid-item {
+      padding: 8px;
+    }
+
+    .grid-item .img-place {
+      margin-bottom: 0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* Blog cards */
+    .page-blog .card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+      margin-bottom: 8px;
+    }
+
+    .page-blog .card .caption {
+      padding: 16px 18px;
+    }
+
+    /* Contact form fields */
+    .vg-contact-form .form-control {
+      margin-bottom: 0;
+    }
+
+    .vg-contact-form .form-row > div {
+      margin-top: 14px !important;
+    }
+
+    .vg-contact-form .form-row > div:first-child {
+      margin-top: 0 !important;
+    }
+
+    /* Footer */
+    .vg-footer {
+      padding-top: 40px;
+      padding-bottom: 24px;
+    }
+
+    .vg-footer .footer-info,
+    .vg-footer ul.list-unstyled {
+      margin-bottom: 0;
+    }
+
+    .vg-footer ul.list-unstyled li {
+      padding: 3px 0;
+    }
+
+    .vg-footer .row.justify-content-center.mt-3 {
+      margin-top: 24px !important;
+    }
+
+    @media (max-width: 767px) {
+      .vg-page {
+        padding-top: 32px;
+        padding-bottom: 32px;
+      }
+    }
+  </style>
 </head>
 
 <body class="theme-red">
@@ -75,48 +274,6 @@
     </div>
   </div>
 
-  <!-- <div class="vg-page page-home" id="home" style="background-image: url(./assets/img/bg_image_1.jpg)">
-
-    <div class="navbar navbar-expand-lg navbar-dark sticky" data-offset="500">
-      <div class="container">
-        <a href="" class="navbar-brand">MyPortfolio</a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navbar" aria-expanded="true">
-          <span class="ti-menu"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="main-navbar">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a href="#home" class="nav-link" data-animate="scrolling">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="#about" class="nav-link" data-animate="scrolling">About</a>
-            </li>
-            <li class="nav-item">
-              <a href="#portfolio" class="nav-link" data-animate="scrolling">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a href="#blog" class="nav-link" data-animate="scrolling">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a href="#contact" class="nav-link" data-animate="scrolling">Contact</a>
-            </li>
-          </ul>
-          <ul class="nav ml-auto">
-            <li class="nav-item">
-              <button class="btn btn-fab btn-theme no-shadow">En</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div> 
-    <div class="caption-header text-center wow zoomInDown">
-      <h5 class="fw-normal">Hi there</h5>
-      <h1 class="fw-light mb-4"> <b class="fg-theme"> I am Elias</b> Kemboy</h1>
-      <div class="badge">Software Engineer</div>
-    </div> 
-    <div class="floating-button"><span class="ti-mouse"></span></div>
-  </div> -->
-
   <div class="vg-page page-about" id="about">
     <div class="container">
       <div class="row">
@@ -127,16 +284,15 @@
           <p class="text-muted">
             Highly skilled software engineer with a strong talent for software design and development. Extensive
             expertise gained through self-learning and team engagements, successfully undertaking software projects.
-            Proficient in content management systems such as WordPress, with experience in building, customizing, and
-            optimizing scalable web platforms. Good in using Customer Relationship Management tools like Oracle and Odoo
-            to streamline workflows and improve client engagement. Certified Google Ads specialist, skilled in creating
-            and managing targeted ad campaigns, analyzing performance metrics, and driving ROI-focused digital marketing
-            strategies.
+            Experienced in integrating large language models (LLMs) and AI APIs into production applications,
+            and in contributing to AI training workflows including data labeling, prompt engineering, and model
+            evaluation.
+            Certified Google Ads specialist skilled in driving ROI-focused digital marketing strategies.
           </p>
           <ul class="theme-list">
             <li><b>From:</b> Nairobi, Kenya</li>
-            <li><b>Lives In:</b> Nairobi</li>
-            <li><b>Age:</b> 25</li>
+            <li><b>Lives In:</b> Port Louis, Mauritius</li>
+            <li><b>Age:</b> 26</li>
             <li><b>Gender:</b> Male</li>
           </ul>
           <a href="MyCv.pdf" target="_blank">
@@ -156,18 +312,43 @@
             <ul class="text-muted">
               <li>I have learned to undertake team work projects in GitHub throughout the software development process.
               </li>
-              <li>I have published mobile apps on both Google Play Store and Huawei Store. <a href="https://onelink.to/nrmce8" target="_blank">OneKitty</a></li>
-              <li>Completed the implementation of Book rides with Northrift shuttle services <a href="https://northriftbookings.co.ke"
-                  target="_blank">Northrift Shuttle bookings</a>.</li>
+              <li>I have published mobile apps on both Google Play Store and Huawei Store. <a
+                  href="https://onelink.to/nrmce8" target="_blank">OneKitty</a></li>
+              <li>Completed the implementation of Book rides with Northrift shuttle services <a
+                  href="https://northriftbookings.co.ke" target="_blank">Northrift Shuttle bookings</a>.</li>
               <li>Developed a visually appealing website for <a href="https://technirvanasolutions.co.ke"
                   target="_blank">Technirvana Solutions</a>.</li>
-              <li>Created <a href="https://plenty.co.ke" target="_blank">Plenty & PlentyBiz App</a> — a marketing
+              <li>Created <a href="https://play.google.com/store/apps/details?id=ke.co.plenty" target="_blank">PlentyBiz App</a> — a marketing
                 platform that operates across all devices.</li>
               <li>Participated in the <a href="https://onelink.to/nrmce8" target="_blank">OneKitty</a> mobile app
                 development.</li>
+              <li>
+                Designed, created and deployed more than 8 live websites, including:
+                <ul>
+                  <li><a href="https://kodibill.co.ke" target="_blank" rel="noopener noreferrer">Kodibill E-billing
+                      System</a></li>
+                  <li><a href="https://onekitty.co.ke" target="_blank" rel="noopener noreferrer">OneKitty Fintech
+                      Contribution System</a></li>
+                  <li><a href="https://tandasnacks.co.ke" target="_blank" rel="noopener noreferrer">Tanda Snacks
+                      E-commerce Platform</a></li>
+                  <li><a href="https://northriftbookings.co.ke" target="_blank" rel="noopener noreferrer">North Rift Car
+                      Booking System</a></li>
+                  <li><a href="https://plenty.ke" target="_blank" rel="noopener noreferrer">PlentyBiz Marketing
+                      Platform</a></li>
+                  <li><a href="https://technirvanasolutions.co.ke" target="_blank" rel="noopener noreferrer">Technirvana
+                      Management System</a></li>
+                  <li><a href="https://crystal-nova.com" target="_blank" rel="noopener noreferrer">Crystal Nova Brand
+                      Website</a></li>
+                  <li><a href="https://grandventura.com" target="_blank" rel="noopener noreferrer">Grand Ventura
+                      Portfolio</a></li>
+                </ul>
+              </li>
+
+
               <li>Published Flutter packages on <a href="https://pub.dev/packages/dropdown_search_picker"
                   target="_blank">pub.dev</a>, contributing to the mobile development community.</li>
-                  <li>Successfully integrated Paystack,Stripe and M-Pesa payments to <a href="https://aynacosmetics.com" target="_blank">Ayna Cosmetics</a>
+              <li>Successfully integrated Paystack,Stripe and M-Pesa payments to <a href="https://onekitty.co.ke"
+                  target="_blank">OneKitty.co.ke</a>
               </li>
               <li>Managed a Google Ads campaign that significantly increased conversions.</li>
             </ul>
@@ -177,24 +358,17 @@
     </div>
 
 
-    <div class="container py-5">
+    <div class="container py-3">
       <h1 class="text-center fw-normal wow fadeIn">My Skills</h1>
-      <div class="row py-3">
+      <div class="row py-2">
         <div class="col-md-6">
           <div class="px-lg-3">
             <h4 class="wow fadeInUp">Coding skills</h4>
 
             <div class="progress-wrapper wow fadeInUp">
-              <span class="caption">Flutter</span>
+              <span class="caption">Flutter & Dart</span>
               <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="75" aria-valuemin="0"
-                  aria-valuemax="100">100%</div>
-              </div>
-            </div>
-            <div class="progress-wrapper wow fadeInUp">
-              <span class="caption">HTML + CSS</span>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="75" aria-valuemin="0"
                   aria-valuemax="100">100%</div>
               </div>
             </div>
@@ -202,7 +376,7 @@
               <span class="caption">Laravel</span>
               <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: 86%;" aria-valuenow="75" aria-valuemin="0"
-                  aria-valuemax="100">86%</div>
+                  aria-valuemax="100">90%</div>
               </div>
             </div>
             <div class="progress-wrapper wow fadeInUp">
@@ -210,6 +384,13 @@
               <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="75" aria-valuemin="0"
                   aria-valuemax="100">90%</div>
+              </div>
+            </div>
+             <div class="progress-wrapper wow fadeInUp">
+              <span class="caption">Elixir</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="75" aria-valuemin="0"
+                  aria-valuemax="100">80%</div>
               </div>
             </div>
           </div>
@@ -235,14 +416,14 @@
               <span class="caption">Software Testing and Quality Assurance(QA)</span>
               <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: 79%;" aria-valuenow="75" aria-valuemin="0"
-                  aria-valuemax="100">79%</div>
+                  aria-valuemax="100">100%</div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container pt-5">
+    <div class="container pt-3">
       <div class="row">
         <div class="col-md-6 wow fadeInRight">
           <h2 class="fw-normal">Education</h2>
@@ -278,8 +459,20 @@
         <div class="col-md-6 wow fadeInRight" data-wow-delay="200ms">
           <h2 class="fw-normal">Experience</h2>
           <ul class="timeline mt-4 pr-md-5">
+             <li>
+              <div class="title">May, 2026 - Current</div>
+              <div class="details">
+                <h5>Software Engineer</h5>
+                <small class="fg-theme">Ubuntu Ile' Technologies</small>
+                <p>Develop and integrate RESTful APIs and backend services to support web and mobile applications.</p>
+                <p>Integrate third-party APIs and external services into business applications.</p>
+                <p>Deploy and manage applications across cloud and server environments, including server configuration, application setup, and infrastructure maintenance.</p>
+               
+
+              </div>
+            </li>
             <li>
-              <div class="title">August, 2024 - Current</div>
+              <div class="title">August, 2024 - April, 2026</div>
               <div class="details">
                 <h5>Full-Stack Engineer</h5>
                 <small class="fg-theme">Technirvana Solutions Limited</small>
@@ -301,7 +494,7 @@
               </div>
             </li>
             <li>
-              <div class="title">September, 2023- March, 2024</div>
+              <div class="title">September, 2023- February, 2024</div>
               <div class="details">
                 <h5>Technical Consultant Web and Mobile Applications</h5>
                 <small class="fg-theme">Agile Business Solutions Limited</small>
@@ -322,7 +515,7 @@
         <div class="badge badge-subhead">Service</div>
       </div>
       <h1 class="fw-normal text-center wow fadeInUp">What can i do?</h1>
-      <div class="row mt-5">
+      <div class="row mt-4">
         <div class="col-md-6 col-lg-4 col-xl-3">
           <div class="card card-service wow fadeInUp">
             <div class="icon">
@@ -374,19 +567,19 @@
   <div class="vg-page page-funfact" style="background-image: url(../assets/img/bg_banner.jpg);">
     <div class="container">
       <div class="row section-counter">
-        <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
+        <div class="col-md-6 col-lg-3 py-3 wow fadeIn">
           <h1 class="number" data-number="24">24</h1>
           <span>Clients</span>
         </div>
-        <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
-          <h1 class="number" data-number="23">23</h1>
+        <div class="col-md-6 col-lg-3 py-3 wow fadeIn">
+          <h1 class="number" data-number="23">15</h1>
           <span>Project Completed</span>
         </div>
-        <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
+        <div class="col-md-6 col-lg-3 py-3 wow fadeIn">
           <h1 class="number" data-number="2">2</h1>
           <span>Project Ongoing</span>
         </div>
-        <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
+        <div class="col-md-6 col-lg-3 py-3 wow fadeIn">
           <h1 class="number" data-number="100">100</h1>
           <span>Client Satisfaction</span>
         </div>
@@ -401,7 +594,7 @@
         <div class="badge badge-subhead">Portfolio</div>
       </div>
       <h1 class="text-center fw-normal wow fadeInUp">See my work</h1>
-      <div class="filterable-button py-3 wow fadeInUp" data-toggle="selected">
+      <div class="filterable-button py-2 wow fadeInUp" data-toggle="selected">
         <button class="btn btn-theme-outline selected" data-filter="*">All</button>
         <button class="btn btn-theme-outline" data-filter=".apps">Apps</button>
         <button class="btn btn-theme-outline" data-filter=".template">Templates</button>
@@ -411,7 +604,7 @@
         <button class="btn btn-theme-outline" data-filter=".wireframes">Wireframes</button>
       </div>
 
-      <div class="gridder my-3">
+      <div class="gridder my-2">
         <div class="grid-item apps wow zoomIn">
           <div class="img-place" data-src="../assets/img/work/work-1.jpg" data-fancybox
             data-caption="<h5 class='fg-theme'>Mobile Travel App</h5> <p>Travel, Discovery</p>">
@@ -483,7 +676,7 @@
   <div class="vg-page page-testimonial">
     <div class="container">
       <h1 class="text-center fw-normal wow fadeInUp">What Clients are Saying</h1>
-      <div class="row justify-content-center mt-5 wow fadeInUp">
+      <div class="row justify-content-center mt-4 wow fadeInUp">
         <div class="col-md-9">
           <div class="owl-carousel testi-carousel">
             <div class="item">
@@ -634,7 +827,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 text-center py-3 wow fadeInUp">
+        <div class="col-12 text-center py-2 wow fadeInUp">
           <a href="blog-fullbar.html" class="btn btn-theme">See All Post</a>
         </div>
       </div>
@@ -648,7 +841,7 @@
         <div class="badge badge-subhead">Contact</div>
       </div>
       <h1 class="text-center fw-normal wow fadeInUp">Get in touch</h1>
-      <div class="row py-5">
+      <div class="row py-4">
         <div class="col-lg-7 px-0 pr-lg-3 wow zoomIn">
           <div class="vg-maps">
             <div id="google-maps" style="width: 100%; height: 100%;"></div>
@@ -686,14 +879,14 @@
     <h1 class="text-center">Portfolio</h1>
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 py-3">
+        <div class="col-lg-4 py-2">
           <div class="footer-info">
             <p>Where to find me</p>
             <hr class="divider">
             <p class="fs-large fg-white">Karen, Nairobi Kenya</p>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3 py-3">
+        <div class="col-md-6 col-lg-3 py-2">
           <div class="float-lg-right">
             <p>Follow me</p>
             <hr class="divider">
@@ -706,7 +899,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3 py-3">
+        <div class="col-md-6 col-lg-3 py-2">
           <div class="float-lg-right">
             <p>Contact me</p>
             <hr class="divider">
@@ -719,11 +912,11 @@
         </div>
       </div>
       <div class="row justify-content-center mt-3">
-        <div class="col-12 mb-3">
+        <div class="col-12 mb-2">
           <h3 class="fw-normal text-center">Subscribe</h3>
         </div>
         <div class="col-lg-6">
-          <form class="mb-3">
+          <form class="mb-2">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Email address">
               <input type="submit" class="btn btn-theme no-shadow" value="Subscribe">
@@ -731,7 +924,7 @@
           </form>
         </div>
         <div class="col-12">
-          <p class="text-center mb-0 mt-4">Copyright &copy;2021. All right reserved | This site is made with <span
+          <p class="text-center mb-0 mt-3">Copyright &copy;2021. All right reserved | This site is made with <span
               class="ti-heart fg-theme-red"></span> by <a href="https://www.github.com/kemboy-svg">Kemboy-svg</a></p>
         </div>
       </div>
